@@ -58,9 +58,14 @@ $routes->get('/about', function (){
 
 });
 $routes->get('/post', 'PostController::index');
-$routes->get('/admin', 'Templating::index');
+
 $routes->get('/register', 'RegisterController::index');
 $routes->post('/saveRegister', 'RegisterController::saveRegister');
+
+//ini belajar tadi
+$routes->get('/admin', 'Templating::index');
+$routes->get('/admin/posts', 'AdminPostsController::index');
+$routes->get('/admin/posts/create', 'AdminPostsController::create');
 
 /*
  * --------------------------------------------------------------------

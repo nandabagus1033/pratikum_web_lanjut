@@ -79,11 +79,11 @@
     </div>
     <!-- /.content-header -->
 
-   
-
-
-
-
+   <!-- Main content -->
+   <div class="container">
+        <a href="/admin/posts/create" class="btn btn-primary"><i class="fas fa-plus"></i> Tambah Data</button>
+    </div>
+    <!-- Main content -->
 
     
   </div>
@@ -101,3 +101,5 @@
 <!-- ./wrapper -->
 
 <?= $this->endSection();?>
+ 
+    

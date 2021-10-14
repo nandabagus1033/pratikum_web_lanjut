@@ -79,13 +79,51 @@
     </div>
     <!-- /.content-header -->
 
-   
+    <!-- Main content -->
+   <div class="container">
+            <div class="card">
+            <div class="card-header">
+                Form tambah post
+            </div>
+            <div class="card-body">
+            <form>
+                    <div class="col">
+                        <div class="row">
+                    <div class="form-group">
+                        <label for="judul">Judul Postingan</label>
+                        <input type="text" class="form-control" id="judul" name="judul">
+                    </div>
 
+                    <div class="form-group">
+                        <label for="slug">Slug</label>
+                        <input type="text" class="form-control" id="slug" name="slug">
+                    </div>
 
+                    <div class="form-group">
+                        <label for="kategori">Kategori Postingan</label>
+                        <input type="text" class="form-control" id="kategori" name="kategori">
+                    </div>
 
+                    <div class="form-group">
+                        <label for="author">Author</label>
+                        <input type="text" class="form-control" id="author" name="author">
+                    </div>
 
+                    <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Submit</button>
 
-    
+                    <div class="form-group">
+                        <label for="deskripsi">Deskripsi</label>
+                        <br>
+                        <textarea id="deskripsi" name="deskripsi">
+                    </div>
+                    </div>
+                    </div>
+            </form>  
+            </div>
+        </div>
+    </div>
+    <!-- Main content -->
+       
   </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
@@ -101,3 +139,12 @@
 <!-- ./wrapper -->
 
 <?= $this->endSection();?>
+
+<?= $this->section('myscript');?>
+
+<script>
+$('#deskripsi').summernote()
+</script>
+
+<?= $this->endSection();?>
+
