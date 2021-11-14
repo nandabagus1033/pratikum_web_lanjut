@@ -106,15 +106,26 @@
                       <td><?= $post['slug'] ?></td>
                       <td><?= $post['author'] ?></td>
                       <td><?= $post['kategori'] ?></td>
-                      
+                      <form>
                       <td>
-                        <a href="/admin/posts/edit/<?= $post['slug']; ?>" class="btn btn-sm btn-warning me-1"><i class="fas fa-edit"></i>Edit</a>
-                        <a href="/admin/posts/delet/<?= $post['slug']; ?>" class="btn btn-sm btn-danger me-1"><i class="fas fa-trash"></i>Delete</a>
+                        
+                        <button type="button" class="btn btn-sm btn-warning me-1" onclick="window.location='<?= site_url('/AdminPostsController/edit/'.$post['slug']) ?>'"> <i class="fas fa-edit"></i> Edit</button>
+                        <button type="button" class="btn btn-sm btn-danger me-1" onclick="hapus('<?= $post['slug'] ?>')"><i class="fas fa-trash"></i> Delete</button>
                       </td>
                     </tr>
                     <?php endforeach; ?>
                   </tbody>
-              </table>           
+              </table>         
+              <script>
+                function hapus(slug){
+                  pesan = confirm('apakah anda yakin mau hapus data');
+
+                  if(pesan){
+                    window.location.href=("<?= site_url('/AdminPostsController/delete/')?>")+slug;
+
+                  }else return false;
+                }
+              </script>  
           </div>
         </div>
     </div>

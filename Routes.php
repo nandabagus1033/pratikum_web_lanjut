@@ -32,40 +32,44 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', function (){
-
-	$data =[
-		'tittle' => "Blog - Home",
+$routes->get('/', function(){
+	$data = [
+		'title' => "Blog - home"
 	];
-	
-	echo view('layouts/header',$data);
-	echo view('layouts/navbar');
-	echo view('v_home');
-	echo view('layouts/footer');
-
+		echo view('layouts/header', $data);
+		echo view('layouts/navbar');
+		echo view('v_home');
+		echo view('layouts/footer');
 });
-$routes->get('/post', 'PostController::index');
-$routes->get('/about', function (){
 
-	$data =[
-		'tittle' => "Blog - About",
-	];
-
-	echo view('layouts/header',$data);
-	echo view('layouts/navbar');
-	echo view('v_about');
-	echo view('layouts/footer');
-
-});
-$routes->get('/post', 'PostController::index');
-
-$routes->get('/register', 'RegisterController::index');
-$routes->post('/saveRegister', 'RegisterController::saveRegister');
-
-//ini belajar tadi
 $routes->get('/admin', 'Templating::index');
 $routes->get('/admin/posts', 'AdminPostsController::index');
 $routes->get('/admin/posts/create', 'AdminPostsController::create');
+$routes->post('/admin/posts/store', 'AdminPostsController::store');
+$routes->post('/admin/posts/updatedata', 'AdminPostsController::updatedata');
+$routes->post('/admin/posts/viewformedit', 'AdminPostsController::viewformedit');
+// $routes->post('/admin/posts/edit', 'AdminPostsController::validedit');
+
+
+
+
+
+
+$routes->get('/register', 'Templating::register');
+
+$routes->post('/saveRegister', 'Templating::saveRegister');
+
+$routes->get('/posts', 'PostController::index');
+
+$routes->get('/about', function(){
+	$data = [
+		'title' => "Blog - about"
+	];
+	echo view('layouts/header', $data);
+	echo view('layouts/navbar');
+	echo view('v_about');
+	echo view('layouts/footer');
+});
 
 /*
  * --------------------------------------------------------------------
